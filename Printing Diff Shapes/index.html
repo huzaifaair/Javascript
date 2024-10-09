@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Patterns</title>
+    <style>
+        body {
+            font-family: monospace; 
+        }
+        pre {
+            white-space: pre; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Star Patterns:</h2>
+    <pre id="patterns"></pre>
+    
+    <script>
+        let n = 5; 
+        let output = ""; 
+
+        // Upper triangle
+        output += "Upper Triangle:\n";
+        for (let i = 1; i <= n; i++) {
+            let str = "* ";
+            output += str.repeat(i) + "\n"; 
+        }
+
+       
+        output += "\n";
+
+        // Lower left triangle
+        output += "Lower Left Triangle:\n";
+        for (let i = n; i >= 1; i--) {
+            let str = "* ";
+            output += str.repeat(i) + "\n"; 
+        }
+
+
+        output += "\n"; 
+
+        // Triangle Pattern
+        output += "Triangle Star Pattern:\n";
+        for (let i = 1; i <= n; i++) {
+            
+            let spaces = " ".repeat(n - i); 
+            let stars = "* ".repeat(i); 
+            output += spaces + stars + "\n"; 
+        }
+
+   
+        document.getElementById("patterns").innerText = output;
+    </script>
+</body>
+</html>

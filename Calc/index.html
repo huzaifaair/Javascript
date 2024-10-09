@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Calculator</title>
+</head>
+<body>
+    Number 1: <input type="text" id="numberOne">
+Number 2: <input type="text" id="numberTwo">
+<br>
+<input type="button" id="BtnAdd" value="Add" onclick="performOperation('add')">
+<input type="button" id="BtnSubtract" value="Subtract" onclick="performOperation('subtract')">
+<input type="button" id="BtnMultiply" value="Multiply" onclick="performOperation('multiply')">
+<input type="button" id="BtnDivide" value="Divide" onclick="performOperation('divide')">
+<p id="result"></p>
+
+<script>
+    function performOperation(operation) {
+        const num1 = parseFloat(document.getElementById('numberOne').value);
+        const num2 = parseFloat(document.getElementById('numberTwo').value);
+        let result;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById('result').innerHTML = "Please enter valid numbers!";
+            return;
+        }
+
+        switch (operation) {
+            case 'add':
+                result = num1 + num2;
+                break;
+            case 'subtract':
+                result = num1 - num2;
+                break;
+            case 'multiply':
+                result = num1 * num2;
+                break;
+            case 'divide':
+                if (num2 === 0) {
+                    document.getElementById('result').innerHTML = "Cannot divide by zero!";
+                    return;
+                }
+                result = num1 / num2;
+                break;
+        }
+
+        document.getElementById('result').innerHTML = "Result: " + result;
+    }
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

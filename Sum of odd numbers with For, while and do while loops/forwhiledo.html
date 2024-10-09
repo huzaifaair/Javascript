@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Series and Sum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        b {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let limit = 10; 
+
+        // Using a 'for' loop to generate odd numbers and calculate their sum
+        let sumFor = 0;
+        document.write("<h2>Odd Series using 'for' Loop:</h2>");
+        for (let i = 1; i <= limit; i += 2) {
+            document.write(i + "<br>"); 
+            sumFor += i; 
+        }
+        document.write("<b>Sum of odd series (for loop): </b>" + sumFor + "<br><br>");
+
+        // Using a 'while' loop to generate odd numbers and calculate their sum
+        let sumWhile = 0;
+        let j = 1; 
+        document.write("<h2>Odd Series using 'while' Loop:</h2>");
+        while (j <= limit) {
+            document.write(j + "<br>"); 
+            sumWhile += j;
+            j += 2; 
+        }
+        document.write("<b>Sum of odd series (while loop): </b>" + sumWhile + "<br><br>");
+
+        // Using a 'do...while' loop to generate odd numbers and calculate their sum
+        let sumDoWhile = 0;
+        j = 1; 
+        document.write("<h2>Odd Series using 'do...while' Loop:</h2>");
+        do {
+            document.write(j + "<br>"); 
+            sumDoWhile += j;
+            j += 2; 
+        } while (j <= limit);
+        document.write("<b>Sum of odd series (do...while loop): </b>" + sumDoWhile);
+    </script>
+</body>
+</html>

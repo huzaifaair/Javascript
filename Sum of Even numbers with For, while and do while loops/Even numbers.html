@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Series and Sum</title>
+</head>
+<body>
+    <script>
+        let limit = 10; 
+
+        // Using a 'for' loop to generate even numbers and calculate their sum
+        let sumFor = 0;
+        document.write("<h2>Even Series using 'for' Loop:</h2>");
+        for (let i = 2; i <= limit; i += 2) {
+            document.write(i + "<br>"); 
+            sumFor += i; 
+        }
+        document.write("<b>Sum of even series (for loop): </b>" + sumFor + "<br><br>");
+
+        // Using a 'while' loop to generate even numbers and calculate their sum
+        let sumWhile = 0;
+        let i = 2; 
+        document.write("<h2>Even Series using 'while' Loop:</h2>");
+        while (i <= limit) {
+            document.write(i + "<br>"); 
+            sumWhile += i; 
+            i += 2; 
+        }
+        document.write("<b>Sum of even series (while loop): </b>" + sumWhile + "<br><br>");
+
+        // Using a 'do...while' loop to generate even numbers and calculate their sum
+        let sumDoWhile = 0;
+        i = 2; 
+        document.write("<h2>Even Series using 'do...while' Loop:</h2>");
+        do {
+            document.write(i + "<br>");
+            sumDoWhile += i; 
+            i += 2; 
+        } while (i <= limit);
+        document.write("<b>Sum of even series (do...while loop): </b>" + sumDoWhile);
+    </script>
+</body>
+</html>
